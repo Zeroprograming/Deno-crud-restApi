@@ -7,12 +7,13 @@ import { oakCors, Router } from "../deps.ts";
 
 const router = new Router();
 
-router.get("/", ({response}) => {
-    response.body = "Welcome to my API"
-} );
+router.get("/", ({ response }) => {
+  response.body = "Welcome to my API";
+});
 
 router.get("/users", oakCors(), getUsers);
-router.get("/users/:id", oakCors(), getUser)
+router.get("/users/:id", oakCors(), getUser);
 router.post("/users", oakCors(), createUsers);
 router.delete("/users/:id", oakCors(), deleteUsers);
-export default router
+router.put("/users/:id", oakCors(), updateUsers);
+export default router;
