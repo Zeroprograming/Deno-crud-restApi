@@ -9,6 +9,7 @@ interface UserUpdate{
     password?: string;
 }
 
+// deno-lint-ignore no-explicit-any
 function isValidUserUpdate(data: any): data is UserUpdate {
     return (
         typeof data.id === "string" ||
